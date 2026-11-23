@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Reynaldo Colón | Software Development{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="{% static 'profile.jpg' %}" alt="Reynaldo Colón" class="nav-avatar">
+                Reynaldo Colón
+            </a>
+            <button id="menu-toggle" class="menu-toggle">☰</button>
+            <ul id="navbar-nav" class="navbar-nav">
+                <li><a class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}" href="{% url 'home' %}" data-en="Home" data-es="Inicio">Home</a></li>
+                <li><a class="nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}" href="{% url 'about' %}" data-en="About" data-es="Sobre Mí">About</a></li>
+                <li><a class="nav-link {% if request.resolver_match.url_name == 'projects' %}active{% endif %}" href="{% url 'projects' %}" data-en="Projects" data-es="Proyectos">Projects</a></li>
+                <li><a class="nav-link {% if request.resolver_match.url_name == 'resources' %}active{% endif %}" href="{% url 'resources' %}" data-en="Resources" data-es="Recursos">Resources</a></li>
+                <li><a class="nav-link {% if request.resolver_match.url_name == 'contact' %}active{% endif %}" href="{% url 'contact' %}" data-en="Contact" data-es="Contacto">Contact</a></li>
+                <li class="nav-controls">
+                    <button id="lang-toggle" class="theme-btn">🌐 ES</button>
+                    <button id="theme-toggle" class="theme-btn">🌙 Dark</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>{% block content %}{% endblock %}</main>
+
+    <footer>
+        <div class="container">
+            <p class="text-light">Reynaldo Colón — Software Development</p>
+            <div class="social-links">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-btn">GitHub</a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn">LinkedIn</a>
+                <a href="{% url 'contact' %}" class="social-btn" data-en="Message Me" data-es="Envíame un Mensaje">Message Me</a>
+            </div>
+            <small>Built with Python &amp; Django</small>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById("menu-toggle"), navMenu = document.getElementById("navbar-nav");
+        menuBtn.onclick = () => { navMenu.classList.toggle("open"); menuBtn.textContent = navMenu.classList.contains("open") ? "✕" : "☰"; };
+
+        const toggleBtn = document.getElementById("theme-toggle");
+        if (localStorage.getItem("theme") === "dark") { document.body.classList.add("dark-mode"); toggleBtn.textContent = "☀️ Light"; }
+        toggleBtn.onclick = () => {
+            document.body.classList.toggle("dark-mode");
+            const isDark = document.body.classList.contains("dark-mode");
+            toggleBtn.textContent = isDark ? "☀️ Light" : "🌙 Dark";
+            localStorage.setItem("theme", isDark ? "dark" : "light");
+        };
+
+        const langBtn = document.getElementById("lang-toggle");
+        function setLang(lang) {
+            langBtn.textContent = lang === "es" ? "🇺🇸 EN" : "🌐 ES";
+            document.querySelectorAll("[data-en]").forEach(el => el.textContent = el.dataset[lang]);
+            document.querySelectorAll("[data-en-placeholder]").forEach(el => el.placeholder = el.dataset[lang + "Placeholder"]);
+        }
+        setLang(localStorage.getItem("lang") || "en");
+        langBtn.onclick = () => {
+            const next = (localStorage.getItem("lang") || "en") === "en" ? "es" : "en";
+            localStorage.setItem("lang", next);
+            setLang(next);
+        };
+    </script>
+</body>
+</html>

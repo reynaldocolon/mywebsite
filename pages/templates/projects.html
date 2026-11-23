@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block title %}Projects | Reynaldo Colón{% endblock %}
+
+{% block content %}
+<style>
+    .tech-tag {
+        display: inline-block;
+        background-color: rgba(56, 189, 248, 0.15);
+        color: #38bdf8;
+        border: 1px solid rgba(56, 189, 248, 0.35);
+        font-size: 0.8rem;
+        font-weight: 700;
+        padding: 4px 12px;
+        border-radius: 999px;
+        margin-bottom: 14px;
+    }
+    .project-links { display: flex; gap: 12px; margin-top: 20px; }
+    .btn-sm { padding: 8px 16px; font-size: 0.9rem; }
+</style>
+
+<div class="container my-5">
+    <div style="text-align: center; max-width: 700px; margin: 0 auto 48px;">
+        <span class="badge" data-en="Portfolio" data-es="Portafolio">Portfolio</span>
+        <h1 style="font-size: 2.4rem; font-weight: 800; margin: 0 0 12px; color: var(--text-heading);"
+            data-en="Featured Software Projects" data-es="Proyectos Destacados">
+            Featured Software Projects
+        </h1>
+        <p class="text-muted" style="font-size: 1.1rem;"
+           data-en="Applications, automation scripts, and full-stack web solutions built with Python and Django."
+           data-es="Aplicaciones, programas de automatización y sitios web desarrollados con Python y Django.">
+            Applications, automation scripts, and full-stack web solutions built with Python and Django.
+        </p>
+    </div>
+
+    {% if projects %}
+        <div class="row">
+            {% for project in projects %}
+                <div class="col-md-4">
+                    <div class="card" style="display: flex; flex-direction: column;">
+                        <div>
+                            <span class="tech-tag">{{ project.tech_stack }}</span>
+                            <h3 class="card-title">{{ project.title }}</h3>
+                            <p class="card-text">{{ project.description }}</p>
+                        </div>
+                        <div class="project-links" style="margin-top: auto;">
+                            {% if project.github_url %}
+                                <a href="{{ project.github_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-dark btn-sm"
+                                   data-en="GitHub Code ↗" data-es="Código en GitHub ↗">
+                                    GitHub Code ↗
+                                </a>
+                            {% endif %}
+                            {% if project.live_url %}
+                                <a href="{{ project.live_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-info btn-sm"
+                                   data-en="Live Demo ↗" data-es="Ver en Vivo ↗">
+                                    Live Demo ↗
+                                </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="card" style="text-align: center; max-width: 600px; margin: 0 auto;">
+            <h3 class="card-title" data-en="Projects Coming Soon" data-es="Proyectos Próximamente">Projects Coming Soon</h3>
+            <p class="card-text"
+               data-en="Log in to your /admin/ dashboard and add your first project to display it here automatically!"
+               data-es="¡Inicia sesión en tu panel /admin/ y agrega tu primer proyecto para mostrarlo aquí automáticamente!">
+                Log in to your <strong>/admin/</strong> dashboard and add your first project to display it here automatically!
+            </p>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

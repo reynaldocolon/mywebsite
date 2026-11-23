@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}About | Reynaldo Colón{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row" style="align-items: center;">
+        <div class="col-lg-7">
+            <h1 style="font-size: 2.3rem; font-weight: 800; margin: 0 0 12px; color: var(--text-heading);"
+                data-en="About My Work" data-es="Sobre Mi Trabajo">
+                About My Work
+            </h1>
+            <p class="lead" style="color: var(--text-muted); margin: 0 0 16px;"
+               data-en="I am a software developer focused on building practical, reliable web applications and continuously expanding my computer science foundation."
+               data-es="Soy un desarrollador enfocado en crear aplicaciones web prácticas y confiables, ampliando continuamente mis conocimientos en ciencias de la computación.">
+                I am a software developer focused on building practical, reliable web applications and continuously expanding my computer science foundation.
+            </p>
+            <p style="margin-bottom: 24px;"
+               data-en="This website is custom-built from the ground up with Python and Django—featuring server-side template inheritance, relational database models, and a protected administrative backend."
+               data-es="Este sitio web está desarrollado desde cero con Python y Django, con plantillas reutilizables, bases de datos relacionales y un panel administrativo protegido.">
+                This website is custom-built from the ground up with <strong>Python</strong> and <strong>Django</strong>—featuring server-side template inheritance, relational database models, and a protected administrative backend.
+            </p>
+            <a href="{% url 'contact' %}" class="btn btn-dark" data-en="Send Me a Message" data-es="Envíame un Mensaje">
+                Send Me a Message
+            </a>
+        </div>
+
+        <div class="col-lg-5">
+            <div class="card">
+                <h3 class="card-title" data-en="Technical Stack & Focus" data-es="Tecnologías y Enfoque">Technical Stack &amp; Focus</h3>
+                <ul class="list-group">
+                    <li class="list-group-item" data-en="Languages: Python, HTML5, CSS3, SQL" data-es="Lenguajes: Python, HTML5, CSS3, SQL">
+                        <strong>Languages:</strong> Python, HTML5, CSS3, SQL
+                    </li>
+                    <li class="list-group-item" data-en="Frameworks: Django 6.0" data-es="Herramientas Web: Django 6.0">
+                        <strong>Frameworks:</strong> Django 6.0
+                    </li>
+                    <li class="list-group-item" data-en="Core Foundations: Algorithms, Linear Algebra, Discrete Math & Statistics" data-es="Bases Matemáticas: Algoritmos, Álgebra Lineal, Matemática Discreta y Estadística">
+                        <strong>Core Foundations:</strong> Algorithms, Linear Algebra, Discrete Math &amp; Statistics
+                    </li>
+                    <li class="list-group-item" data-en="Tools: Git, VS Code, SQLite" data-es="Entorno de Trabajo: Git, VS Code, SQLite">
+                        <strong>Tools:</strong> Git, VS Code, SQLite
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

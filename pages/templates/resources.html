@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% block title %}Resources | Reynaldo Colón{% endblock %}
+
+{% block content %}
+<style>
+    .resource-link { color: var(--text-heading); text-decoration: none; font-weight: 700; transition: color 0.2s ease; }
+    .resource-link:hover { color: #38bdf8; text-decoration: underline; }
+    .resource-list { padding-left: 20px; margin-top: 16px; margin-bottom: 0; }
+    .resource-list li { padding: 8px 0; border-bottom: 1px solid var(--card-border); color: var(--text-heading); font-weight: 600; }
+    .resource-list li:last-child { border-bottom: none; }
+</style>
+
+<div class="container my-5">
+    <div style="text-align: center; max-width: 700px; margin: 0 auto 48px;">
+        <span class="badge" data-en="Continuous Learning" data-es="Aprendizaje Continuo">Continuous Learning</span>
+        <h1 style="font-size: 2.4rem; font-weight: 800; margin: 0 0 12px; color: var(--text-heading);"
+            data-en="Resources & Favorite Sites" data-es="Recursos y Sitios Favoritos">
+            Resources &amp; Favorite Sites
+        </h1>
+        <p class="text-muted" style="font-size: 1.1rem;"
+           data-en="My favorite programming resources, computer science math courses, and useful tech sites."
+           data-es="Mis recursos favoritos de programación, cursos de matemáticas para computación y sitios útiles.">
+            My favorite programming resources, computer science math courses, and useful tech sites.
+        </p>
+    </div>
+
+    <div class="row">
+        <!-- Card 1: Programming Sites -->
+        <div class="col-md-4">
+            <div class="card">
+                <h3 class="card-title" data-en="🐍 Programming Sites" data-es="🐍 Sitios de Programación">🐍 Programming Sites</h3>
+                <p class="card-text"
+                   data-en="My favorite Programming Language. If you go through Gale's Udemy site and have a library card number, you will get the Udemy 100 Days of Python for free. Good Luck!"
+                   data-es="Mi lenguaje de programación favorito. Si entras por el portal de Udemy de Gale con tu tarjeta de biblioteca, puedes tomar el curso 100 Days of Python gratis. ¡Buena suerte!">
+                    My favorite Programming Language. If you go through Gale's Udemy site and have a library card number, you will get the Udemy 100 Days of Python for free. Good Luck!
+                </p>
+                <p class="card-text" style="margin-top: 8px;"
+                   data-en="Dataquest is an awesome site."
+                   data-es="Dataquest es un excelente sitio para practicar.">
+                    <strong>Dataquest</strong> is an awesome site.
+                </p>
+                <ol class="resource-list">
+                    <li>
+                        <a class="resource-link" href="https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/video_galleries/lecture-videos/" target="_blank" rel="noopener noreferrer">
+                            MIT Python free lectures ↗
+                        </a>
+                    </li>
+                    <li>
+                        <a class="resource-link" href="https://galeapps.gale.com/apps/udemy/auth?SAMLRequest=fZBfa4MwFMW%2FiuRdY2y1LKjg2jHdH1bs2KAvI9MwhZhEbzLbbz%2B1DLqXvVzugXvOvfcXA%2BuEppk1jSx5bzkYZzeVVjLTKpmgxhgNFOMvJjjTGry58SrV4VlhW%2FPujNlkR84bH2DxBJ6PnGKXoMIfQ2Hb20N1s1fRtmnLh02t7UfzmZF71dv3vHzcRjkTp%2Bi7Nq0Q5CUP3fV%2BQ%2B7643nKALC8kGCYNFOsH0SuT9xg8%2BoHlER0tfJIuD4i59QJCXR5JUF2kFQxaIFK1nGgpqKH7PmJTldRPSijKiVQGs%2FTdFkwXPn%2FtzMAPsxcUPrLZRxHb4GwMAFQeI6J8VV8elF%2FKac%2F&RelayState=I0w5luiBSc9Po6ChiRJ7dpu_hbA1GoquWHRKC6Halx6vdtill1OH5-4P71EqZy" target="_blank" rel="noopener noreferrer">
+                            Udemy - 100 days of Python ↗
+                        </a>
+                    </li>
+                    <li>
+                        <a class="resource-link" href="https://www.dataquest.io/" target="_blank" rel="noopener noreferrer">
+                            Dataquest ↗
+                        </a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Card 2: Math Sites -->
+        <div class="col-md-4">
+            <div class="card">
+                <h3 class="card-title" data-en="📐 Math Sites" data-es="📐 Sitios de Matemáticas">📐 Math Sites</h3>
+                <p class="card-text"
+                   data-en="Some of the math courses I feel are important in Computer Science."
+                   data-es="Algunos de los cursos de matemáticas que considero importantes en Ciencias de la Computación.">
+                    Some of the math courses I feel are important in Computer Science.
+                </p>
+                <ol class="resource-list">
+                    <li>
+                        <a class="resource-link" href="https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/video_galleries/video-lectures/" target="_blank" rel="noopener noreferrer" data-en="Linear Algebra ↗" data-es="Álgebra Lineal ↗">
+                            Linear Algebra ↗
+                        </a>
+                    </li>
+                    <li>
+                        <a class="resource-link" href="https://oli.cmu.edu/courses/probability-statistics-open-free/" target="_blank" rel="noopener noreferrer" data-en="Probability & Statistics ↗" data-es="Probabilidad y Estadística ↗">
+                            Probability &amp; Statistics ↗
+                        </a>
+                    </li>
+                    <li>
+                        <a class="resource-link" href="https://allthemath.org/course/discrete-math/" target="_blank" rel="noopener noreferrer" data-en="Discrete Math ↗" data-es="Matemática Discreta ↗">
+                            Discrete Math ↗
+                        </a>
+                    </li>
+                    <li>
+                        <a class="resource-link" href="https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/" target="_blank" rel="noopener noreferrer" data-en="Algorithms - Click Menu button ↗" data-es="Algoritmos - Haz clic en el botón Menú ↗">
+                            Algorithms - Click Menu button ↗
+                        </a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Card 3: Favorite Sites -->
+        <div class="col-md-4">
+            <div class="card">
+                <h3 class="card-title" data-en="⭐ Favorite Sites" data-es="⭐ Sitios Favoritos">⭐ Favorite Sites</h3>
+                <p class="card-text" data-en="Some of my favorite sites." data-es="Algunos de mis sitios favoritos.">
+                    Some of my favorite sites.
+                </p>
+                <ol class="resource-list">
+                    <li>
+                        <a class="resource-link" href="https://www.hp.com/us-en/home.html" target="_blank" rel="noopener noreferrer">
+                            Hewlett-Packard ↗
+                        </a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
