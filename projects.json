@@ -1,0 +1,26 @@
+[
+{
+  "model": "pages.project",
+  "pk": 1,
+  "fields": {
+    "title": "Full-Stack Bilingual Developer Portfolio",
+    "description": "A custom multi-page web application built from scratch with Django. Features template inheritance, an interactive Python console, Dark/Light mode, an instant English/US Spanish switcher, and a database-backed admin panel for managing projects and contact submissions.",
+    "tech_stack": "Python, Django, SQLite, HTML5, CSS3, JavaScript",
+    "github_url": null,
+    "live_url": null,
+    "created_at": "2026-11-23T18:49:16.902Z"
+  }
+},
+{
+  "model": "pages.project",
+  "pk": 2,
+  "fields": {
+    "title": "Automated PDF Value Search Tool",
+    "description": "• (Based on the search pdf for certain values like 250.py script in your folder) A Python automation utility designed to scan PDF documents, extract text, and locate specific numerical thresholds or target values quickly without manual review.",
+    "tech_stack": "Python, PDF Parsing, Automation",
+    "github_url": null,
+    "live_url": null,
+    "created_at": "2026-11-23T18:51:18.702Z"
+  }
+}
+]
