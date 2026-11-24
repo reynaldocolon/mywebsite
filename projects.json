@@ -16,7 +16,7 @@
   "pk": 2,
   "fields": {
     "title": "Automated PDF Value Search Tool",
-    "description": "• (Based on the search pdf for certain values like 250.py script in your folder) A Python automation utility designed to scan PDF documents, extract text, and locate specific numerical thresholds or target values quickly without manual review.",
+    "description": "â€¢ (Based on the search pdf for certain values like 250.py script in your folder) A Python automation utility designed to scan PDF documents, extract text, and locate specific numerical thresholds or target values quickly without manual review.",
     "tech_stack": "Python, PDF Parsing, Automation",
     "github_url": null,
     "live_url": null,
