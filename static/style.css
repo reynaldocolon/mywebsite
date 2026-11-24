@@ -28,7 +28,26 @@ main { flex: 1; }
 @keyframes floatOrb { to { transform: translate(65px, 40px) scale(1.15); } }
 @keyframes driftUp { 0% { transform: translateY(60px); opacity: 0; } 20%, 80% { opacity: 1; } 100% { transform: translateY(-420px); opacity: 0; } }
 .badge { display: inline-block; background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.5); color: #38bdf8; padding: 6px 16px; border-radius: 999px; font-size: 0.85rem; font-weight: 700; margin-bottom: 16px; }
-.display-4 { font-size: 2.75rem; font-weight: 800; margin: 0 0 16px; }
+.display-4 {
+    font-size: 2.75rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.2;
+    margin: 0 0 16px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.word-rotator {
+    display: inline-block;
+    vertical-align: baseline !important;
+    color: #38bdf8;
+    line-height: 1.2;
+}
+
 .lead { font-size: 1.12rem; color: #cbd5e1; max-width: 650px; margin: 0 auto 30px; }
 .d-flex { display: flex; flex-wrap: wrap; }
 .justify-content-center { justify-content: center; }
